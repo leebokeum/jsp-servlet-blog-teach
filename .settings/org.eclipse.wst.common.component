@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="jsp-servlet-blog-teach">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes/" source-path="/ImportedClasses"/>
+        <dependent-module archiveName="log4j.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/log4j/log4j">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="java-json.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/java-json/java-json">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="lombok.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/lombok/lombok">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jstl.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jstl/jstl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jstl-api-1.2-rev-1.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jstl-api-1.2-rev-1/jstl-api-1.2-rev-1">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/jsp-servlet-blog-teach/build/classes"/>
+        <property name="context-root" value="jsp-servlet-blog-teach"/>
+    </wb-module>
+</project-modules>

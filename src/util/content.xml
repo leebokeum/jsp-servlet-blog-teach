@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="content">
+	<typeAlias alias="Content" type="model.vo.Content" />
+
+	<select id="getList" resultClass="model.vo.Content" parameterClass="java.util.HashMap">
+		<![CDATA[ 
+		SELECT * FROM (SELECT ROWNUM R, A.* FROM (SELECT *  FROM content where delete_flag = 0 
+		]]>
+		<isNotNull property="c_id">
+			and category_id =#c_id#
+		</isNotNull>   
+		<![CDATA[ 
+		order by id desc) A) A WHERE R > ((#currentPage#-1)*#size#) and R <= ((#currentPage#-1)*#size#)+#size#
+		]]>
+	</select>
+
+	<insert id="saveContent" parameterClass="model.vo.Content">
+		insert into content values (content_seq.nextval, #title#, #content#, to_char(sysdate - 3/24,'YYYY-MM-DD HH24:MI:SS'), #name#, 0, #category_id#, #sub_title#, '', 0, 0)
+	</insert>
+	
+	<update id="deleteContent" parameterClass="int">
+			update content set delete_flag = 1 where id = #id#
+	</update>
+	
+	<select id="getContent" resultClass="model.vo.Content" parameterClass="int">
+		select * from content where id = #id# order by id desc
+	</select>
+	
+	<update id="updateContent" parameterClass="model.vo.Content">
+			update content set title = #title#, content = #content#, name = #name# where id = #id#
+	</update>
+	
+	<select id="getCount" resultClass="int">
+		select count(*) from content where delete_flag = 0
+	</select>
+	
+	<insert id="saveCategory" parameterClass="model.vo.Category">
+		insert into category values (category_seq.nextval, #name#, 0)
+	</insert>
+	
+	<select id="getCategoryList" resultClass="model.vo.Category">
+		select * from category order by name
+	</select>
+</sqlMap>
+

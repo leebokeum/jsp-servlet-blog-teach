@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="about">
+	<typeAlias alias="about" type="model.vo.About" />
+
+	<select id="getAbout" resultClass="model.vo.About">
+		select a.* from about a, (select max(id) id from about) b where a.id = b.id
+	</select>
+	
+	<insert id="saveAbout" parameterClass="model.vo.About">
+		insert into about values (about_seq.nextval, #title#, #sub_title#, #content#, to_char(sysdate - 3/24,'YYYY-MM-DD HH24:MI:SS'))
+	</insert>
+</sqlMap>
+

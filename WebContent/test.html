@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+
+function test(){
+	$.ajax({
+        url:'./Test',
+        dataType:'json',
+        type:'post',
+        data: {input : "test-ajax"},
+        success:function(data){
+			
+        }
+    });
+}
+
+</script>
+</head>
+<body>
+
+<div id="test">
+	<div>success</div>
+</div>
+
+<button onclick="test()">ajax테스트</button>
+
+<form action="./Test">
+	<input type="text" style="width: 500px;" name="input">
+	<input type="submit" value="전송">
+</form>
+
+</body>
+</html>

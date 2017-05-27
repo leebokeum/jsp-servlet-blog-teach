@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+$(function() {
+	$("#addCategoyForm").submit(
+			function(e) {
+				$.ajax({
+					type : 'POST',
+					dataType : "json",
+					url : './AddCategoryController',
+					data : $("#addCategoyForm").serialize(),
+					success : function(result) {
+						$("#add").append( $("<option></option>").attr("value", result.name).text( result.name));
+						//$("#add").append( $("<option value =" + result.name +">"+ result.name + "</option>"));
+					}
+				});
+				e.preventDefault();
+			});
+});
+
+
+</script>
+</head>
+<body>
+	<select id="add">
+		 <option value="volvo">Volvo</option>
+		  <option value="saab">Saab</option>
+		  <option value="mercedes">Mercedes</option>
+		  <option value="audi">Audi</option>
+	</select>
+
+	<form id="addCategoyForm">
+		<input type="text" name="name" style="width: 300px;">
+		 <input type="submit" value= "카테고리추가">
+	</form>
+
+</body>
+</html>

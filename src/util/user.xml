@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="user">
+	<typeAlias alias="User" type="model.vo.User" />
+
+	<insert id="join" parameterClass="model.vo.User">
+		insert into user_table values (user_seq.nextval, #user_id#, #password#, to_char(sysdate - 3/24,'YYYY-MM-DD HH24:MI:SS'),#age#, #name#, #local#, #hobby#, #img_url#, 1, #birthday#)
+	</insert>
+	
+	<select id="getUser" resultClass="model.vo.User" parameterClass="String">
+		select * from user_table where user_id = #user_id#
+	</select>
+	
+	<select id="confirmPassword" resultClass="model.vo.User" parameterClass="model.vo.User">
+		select password from user_table where user_id= #user_id# and password= #password#
+	</select>
+</sqlMap>
+

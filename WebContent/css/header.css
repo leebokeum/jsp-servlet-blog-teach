@@ -1,0 +1,147 @@
+@CHARSET "utf-8";
+
+@media ( max-width : 768px) {
+	a.navbar-brand img.logo_mobile {
+		cursor: pointer;
+		display: block;
+	}
+	a.navbar-brand img.logo_pc {
+		cursor: pointer;
+		display: none;
+	}
+	.site-heading.home h1 {
+		font-weight: 600;
+	}
+	
+	.site-heading.home .subheading{
+		font-size: 20px;
+	}
+	
+	.page-heading.about h1 {
+		font-size: 45px;
+		font-weight: 600;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	.page-heading.about .subheading {
+		display: none;
+	}
+
+	.site-heading.login .subheading {
+		display: none;
+	}
+	
+	.site-heading.login p {
+		display: none;
+	}
+
+	.page-heading.contact h1 {
+		margin-top: 50px;
+		margin-bottom: 80px;
+		font-size: 40px;
+		font-weight: 600;
+	}
+}
+
+@media ( min-width : 768px) {
+	.container-fluid {
+		padding-right: 100px;
+		padding-left: 100px;
+	}
+	.intro-header .site-heading h1, .intro-header .page-heading h1 {
+		font-size: 100px;
+	}
+	.menu_underline {
+		border-bottom: 5px solid #E60F48;
+	}
+	.navbar-custom .nav li a.color_black{
+		color: black;
+	}
+	a.navbar-brand img.logo_mobile {
+		cursor: pointer;
+		display: none;
+	}
+	a.navbar-brand img.logo_pc {
+		cursor: pointer;
+		display: block;
+	}
+	.site-heading.home, .page-heading.about , .site-heading.login {
+		text-align: left;
+	}
+
+	.site-heading.login{
+		padding: 100px 0 0 0; 
+	}
+	.site-heading.login h1{
+		margin-top: 200px;
+	}
+
+	.site-heading.login p{
+		color : #E60F48;
+		margin-top: 100px;
+	}
+
+	.site-heading.home h1, .page-heading.about h1 {
+		font-size: 70px;
+		font-weight: 600;
+	}
+
+	.site-heading.login h1 {
+		font-size: 70px;
+		font-weight: 600;
+	}
+
+	.page-heading.about h1 {
+		margin-top: 110px;
+	}
+	.page-heading.about span.subheading {
+		margin-bottom: 90px;
+	}
+	.page-heading.contact h1 {
+		margin-top: 140px;
+		margin-bottom: 130px;
+		font-size: 55px;
+		font-weight: 600;
+	}
+	.container.main {
+		width: 750px;
+	}
+}
+
+@media ( min-width : 992px) {
+	.container.main {
+		width: 970px;
+	}
+}
+
+@media ( min-width : 1200px) {
+
+}
+
+.nav-sidebar { 
+    width: 100%;
+    padding: 8px 0; 
+    border-left: 1px solid #ddd;
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+}
+.nav-sidebar .active a { 
+    cursor: default;
+    background-color: #333333; 
+    color: #fff; 
+}
+.nav-sidebar .active a:hover {
+    background-color: #37D980;   
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+}
